@@ -1,5 +1,10 @@
 <p>
   {{input value=name}}
 
-  <button {{action "createUser"}}>Create</button>
+    {{md-btn text='create'
+	action='createUser'
+	actionArg=group
+	class=buttonClass
+	}}
+
 </p>

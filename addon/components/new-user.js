@@ -1,8 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/new-user';
 
-export default Ember.Component.extend({
-  layout: layout,
+export default Ember.Component.extend({    
+    buttonClass: 'indigo darken-2',
+
+    tableClass: 'striped',
+    
+    layout: layout,
 
     classNames: ['new-user'],
 
