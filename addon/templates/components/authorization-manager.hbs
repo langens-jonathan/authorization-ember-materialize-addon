@@ -1,46 +1,88 @@
 {{#if isScreen0Active}}
-<button {{action "moveToScreen" "0"}}>GROUPS</button>
-<button {{action "moveToScreen" "1"}}>USERS</button>
-
+{{md-btn text='GROUPS'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="0"
+	}}
+{{md-btn text='USERS'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="1"
+	}}
 {{groups-list openGroupDetail=(action "openGroupDetail")
-	      openNewGroup=(action "openNewGroup")}}
+	      openNewGroup=(action "openNewGroup")
+	      buttonClass=buttonClass
+	      tableClass=tableClass}}
 
 {{/if}}
 
 {{#if isScreen1Active}}
-<button {{action "moveToScreen" "0"}}>GROUPS</button>
-<button {{action "moveToScreen" "1"}}>USERS</button>
-	
+{{md-btn text='GROUPS'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="0"
+	}}
+{{md-btn text='USERS'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="1"
+	}}
 {{users-list openUserDetail=(action "openUserDetail")
-	      openNewUser=(action "openNewUser")}}	
+	      openNewUser=(action "openNewUser")
+	      buttonClass=buttonClass
+	      tableClass=tableClass}}	
 {{/if}}
 
 {{#if isScreen2Active}}
-<button {{action "moveToScreen" "0"}}>back</button>
+{{md-btn text='BACK'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="0"
+	}}
 {{group-display group=currentModel manageAuthorizationsGroup=(action "manageAuthorizationsGroup")}}
 {{/if}}
 
 {{#if isScreen3Active}}
-<button {{action "moveToScreen" "1"}}>back</button>
+{{md-btn text='BACK'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="1"
+	}}
 {{user-display user=currentModel manageAuthorizationsUser=(action "manageAuthorizationsUser")}}
 {{/if}}
 
 {{#if isScreen4Active}}
-<button {{action "moveToScreen" "2"}}>back</button>
+{{md-btn text='BACK'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="2"
+	}}
 {{authorizations-list authority=currentModel}}
 {{/if}}
 
 {{#if isScreen5Active}}
-<button {{action "moveToScreen" "3"}}>back</button>
+{{md-btn text='BACK'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="3"
+	}}
 {{authorizations-list authority=currentModel}}
 {{/if}}
 
 {{#if isScreen6Active}}
-<button {{action "moveToScreen" "0"}}>back</button>
-{{new-group moveToScreen=(action "moveToScreen")}}	
+{{md-btn text='BACK'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="0"
+	}}
+{{new-group moveToScreen=(action "moveToScreen") buttonClass=buttonClass}}	
 {{/if}}
 
 {{#if isScreen7Active}}
-<button {{action "moveToScreen" "1"}}>back</button>
-{{new-user moveToScreen=(action "moveToScreen")}}
+{{md-btn text='BACK'
+	action='moveToScreen'
+	class=buttonClass
+	actionArg="1"
+	}}
+{{new-user moveToScreen=(action "moveToScreen") buttonClass=buttonClass}}
 {{/if}}
