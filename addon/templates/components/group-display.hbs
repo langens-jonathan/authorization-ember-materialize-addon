@@ -44,5 +44,9 @@
 {{/if}}
 {{/collapsible-division}}
 
-<button {{action "manageAuthorizationsGroup" group}}>manage authorizations</button>
 
+{{md-btn text='manage authorizations'
+	action='manageAuthorizationsGroup'
+	class=buttonClass
+	actionArg=group
+	}}

@@ -2,6 +2,10 @@ import Ember from 'ember';
 import layout from '../templates/components/groups-list';
 
 export default Ember.Component.extend({
+    buttonClass: 'indigo darken-2',
+
+    tableClass: 'striped',
+    
     layout: layout,
 
     classNames: ['groups-list'],

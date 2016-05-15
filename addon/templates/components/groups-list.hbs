@@ -1,12 +1,23 @@
 <h5>User Groups</h5>
-<table>
-{{#each groups as |group|}}
-  <tr>
-    <td>{{group.name}}</td>
-    <td><button {{action "openGroupDetail" group}}>detail</button></td>
-    <td><button {{action "removeGroup" group}}>remove</button></td>
-  </tr>
-{{/each}}
-</table>
+{{#md-table content=groups class=tableClass as |group|}}
+  {{md-table-col row=group valueBindingPath='name'}}
+  {{#md-table-col row=row }}
+    {{md-btn text='detail'
+	action='openGroupDetail'
+	actionArg=group
+	class=buttonClass
+	}}
+  {{/md-table-col}}
+  {{#md-table-col row=row }}
+    {{md-btn text='remove'
+	action='removeGroup'
+	actionArg=group
+	class=buttonClass
+	}}
+  {{/md-table-col}}
+{{/md-table}}
 
-<button {{action "openNewGroup"}}>new group</button>
+{{md-btn text='new group'
+	action='openNewGroup'
+	class=buttonClass
+	}}
