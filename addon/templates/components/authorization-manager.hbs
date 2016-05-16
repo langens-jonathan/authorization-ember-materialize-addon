@@ -1,4 +1,5 @@
 {{#if isScreen0Active}}
+
 {{md-btn text='GROUPS'
 	action='moveToScreen'
 	class=buttonClass
@@ -39,7 +40,9 @@
 	class=buttonClass
 	actionArg="0"
 	}}
-{{group-display group=currentModel manageAuthorizationsGroup=(action "manageAuthorizationsGroup")}}
+{{group-display group=currentModel manageAuthorizationsGroup=(action "manageAuthorizationsGroup")
+	      buttonClass=buttonClass
+	      tableClass=tableClass}}
 {{/if}}
 
 {{#if isScreen3Active}}
@@ -48,7 +51,9 @@
 	class=buttonClass
 	actionArg="1"
 	}}
-{{user-display user=currentModel manageAuthorizationsUser=(action "manageAuthorizationsUser")}}
+{{user-display user=currentModel manageAuthorizationsUser=(action "manageAuthorizationsUser")
+	      buttonClass=buttonClass
+	      tableClass=tableClass}}
 {{/if}}
 
 {{#if isScreen4Active}}
@@ -57,7 +62,9 @@
 	class=buttonClass
 	actionArg="2"
 	}}
-{{authorizations-list authority=currentModel}}
+{{authorizations-list authority=currentModel
+	      buttonClass=buttonClass
+	      tableClass=tableClass}}
 {{/if}}
 
 {{#if isScreen5Active}}
@@ -66,7 +73,9 @@
 	class=buttonClass
 	actionArg="3"
 	}}
-{{authorizations-list authority=currentModel}}
+{{authorizations-list authority=currentModel
+	      buttonClass=buttonClass
+	      tableClass=tableClass}}
 {{/if}}
 
 {{#if isScreen6Active}}

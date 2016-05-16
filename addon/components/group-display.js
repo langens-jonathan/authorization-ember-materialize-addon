@@ -14,6 +14,10 @@ export default Ember.Component.extend({
     // USERS SECTION
     // the list of all users in the system
     users:[],
+
+    noUsers: Ember.computed('group.users', function(){
+	return this.get('group.users.length') === 0;
+    }),
     
     // the list of users that can be added to this group
     addableUsers:[],
@@ -24,6 +28,10 @@ export default Ember.Component.extend({
     // GROUPS SECTION
     // the list of all groups in the system
     groups: [],
+
+    noSubGroups: Ember.computed('group.subGroups', function(){
+	return this.get('group.subGroups.length') === 0;
+    }),
     
     // the list of groups that can be assigned as subgroup for this group
     addableSubGroups: [],
