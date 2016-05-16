@@ -12,3 +12,20 @@
         'node_modules/ember-cli-materialize'
       ]
     }
+
+## usage
+
+add the following handlebars to your template:
+'''
+{{authorization-manager}}
+'''
+
+to select a different button color you can set it using the buttonClass variable:
+'''
+{{authorization-manager buttonClass="buttonClass="}}
+'''
+
+you can also select a different table style with:
+'''
+{{authorization-manager tableClass="hoverable"}}
+'''
