@@ -1,7 +1,7 @@
 {
-  "name": "authorization-ember-materialize-addon",
+  "name": "ember-materialize-mu-authorization",
   "version": "0.1.0",
-  "description": "Default ember component for mu-authorization-service. See http://mu.semte.ch/.",
+  "description": "Materialize styled component for authorizaion on the mu-semtech platform. See http://mu.semte.ch/.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -48,8 +48,8 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.1",
-      "ember-cli-htmlbars-inline-precompile": "^0.3.1",
-      "ember-cli-materialize":"0.19.5"
+    "ember-cli-htmlbars-inline-precompile": "^0.3.1",
+    "ember-cli-materialize": "0.19.5"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
