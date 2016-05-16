@@ -22,7 +22,7 @@ add the following handlebars to your template:
 
 to select a different button color you can set it using the buttonClass variable:
 ```
-{{authorization-manager buttonClass="buttonClass="}}
+{{authorization-manager buttonClass="light-green accent-1"}}
 ```
 
 you can also select a different table style with:
