@@ -2,16 +2,20 @@
 <br>
 <h7>Id: {{user.id}}</h7>
 
-{{#collapsible-division header="groups" expanded=true}}
-  {{#if hasNoGroups}}
-    <i>{{user.name}} belongs to no group, you can add {{user.name}} to a group by going to the detail screen of the group to which you want to add him</i>
-  {{else}}
-    <table>
-    {{#each user.userGroups as |group|}}
-      <tr><td>{{group.name}}</td></tr>
-    {{/each}}
-    </table>
-  {{/if}}
-{{/collapsible-division}}
+{{#md-card-collapsible }}
+    {{#md-collapsible icon="mdi-image-filter-drama" title="groups" active=true}}
+      {{#if hasNoGroups}}
+        <i>{{user.name}} belongs to no group, you can add {{user.name}} to a group by going to the detail screen of the group to which you want to add him</i>
+      {{else}}
+        {{#md-table content=user.userGroups class=tableClass  as |group|}}
+          {{md-table-col row=group valueBindingPath='name'}}
+        {{/md-table}}
+      {{/if}}
+    {{/md-collapsible}}
+{{/md-card-collapsible}}
 
-<button {{action "manageAuthorizationsUser" user}}>manage authorizations</button>
+{{md-btn text='manage authorizations'
+	action='manageAuthorizationsUser'
+	class=buttonClass
+	actionArg=user
+	}}

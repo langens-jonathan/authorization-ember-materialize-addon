@@ -3,28 +3,31 @@
   <h7>id: {{authority.id}}</h7>
 </div>
 
-{{#each addableGrantCollections as |coll|}}
-<div style="width:49%;display:inline-block;min-height:50px;border:1px solid black;">
-<div style="width:100%">
-<h7>current {{coll.token.title}} authorizations</h7>
-<p>
-<table>
-{{#each coll.members as |member|}}
-<tr><td>{{member.title}}</td><td><button {{action "removeGrant" member coll.token}}>remove</button></td></tr>
-{{/each}}
-</table>
-</p>
-</div>
-
-<div style="width:100%; border-top:1px solid black;">
-<h7>addable {{coll.token.title}} authorizations</h7>
-<p>
-<table>
-{{#each coll.addables as |addable|}}
-<tr><td>{{addable.title}}</td><td><button {{action "addGrant" addable coll.token}}>add</button></td></tr>
-{{/each}}
-</table>
-</p>
-</div>
-</div>
-{{/each}}
+{{#md-card-collapsible}}
+  {{#each addableGrantCollections as |coll|}}
+    {{#md-collapsible icon="mdi-image-filter-drama" title=coll.token.title}}
+      {{#md-card-collapsible}}
+      
+        {{#md-collapsible icon="mdi-image-filter-drama" title="current grants" active=true}}
+	  {{#md-table content=coll.members class=tableClass  as |member|}}
+            {{md-table-col row=member valueBindingPath='title'}}
+            {{#md-table-col row=member }}
+              <button {{action "removeGrant" member coll.token}}>remove</button>
+            {{/md-table-col}}
+          {{/md-table}}
+	{{/md-collapsible}}
+      
+        {{#md-collapsible icon="mdi-image-filter-drama" title="addable grants"}}
+	  {{#md-table content=coll.addables class=tableClass  as |addable|}}
+            {{md-table-col row=addable valueBindingPath='title'}}
+            {{#md-table-col row=addable }}
+	      <button {{action "addGrant" addable coll.token}}>add</button>
+            {{/md-table-col}}
+          {{/md-table}}
+	{{/md-collapsible}}
+	
+      {{/md-card-collapsible}}
+      
+    {{/md-collapsible}}
+  {{/each}}
+{{/md-card-collapsible}}
